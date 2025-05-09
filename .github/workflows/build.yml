@@ -28,3 +28,9 @@ jobs:
 
     - name: "[3/3] Static Analysis"
       run: mvn verify
+
+    - name: "[4/4] Upload to Coveralls"
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: target/site/jacoco/jacoco.xml
