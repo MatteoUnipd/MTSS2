@@ -2,7 +2,7 @@
 
 
 ![Java CI with Maven](https://github.com/MatteoUnipd/MTSS2/workflows/Java%20CI%20with%20Maven/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/MatteoUnipd/MTSS2/badge.svg?branch=main)](https://coveralls.io/github/MatteoUnipd/MTSS2?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/MatteoUnipd/MTSS2/badge.svg)](https://coveralls.io/github/MatteoUnipd/MTSS2)
 
 
 ## Description
