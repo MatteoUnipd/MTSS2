@@ -21,22 +21,22 @@ import org.junit.Test;
  * (Professional): ok
  */
 
- /**
-  * Right - BICEP Test
-  * (Right): checkRomanPrint()
-  * (Boundary): 
-  *   (Conformance): checkPrivateMethodOfPrintWithException()
-  *   (Order): absent
-  *   (Range): checkPrivateMethodOfPrint()
-  *   (Reference): absent
-  *   (Existence): checkPrivateMethodOfPrint()
-  *   (Cardinality): absent
-  *   (Time): absent
-  * (Inverse): absent
-  * (Cross-check): absent
-  * (Error): absent
-  * (Performance): absent
-  */
+/**
+ * Right - BICEP Test
+ * (Right): checkRomanPrint()
+ * (Boundary): 
+ *   (Conformance): checkPrivateMethodOfPrintWithException()
+ *   (Order): absent
+ *   (Range): checkPrivateMethodOfPrint()
+ *   (Reference): absent
+ *   (Existence): checkPrivateMethodOfPrint()
+ *   (Cardinality): absent
+ *   (Time): absent
+ * (Inverse): absent
+ * (Cross-check): absent
+ * (Error): absent
+ * (Performance): absent
+ */
 
 /**
  * Unit test for simple App.
@@ -56,7 +56,7 @@ public class RomanPrinterTest {
 
     // Make access to private method
     public String RomanPrinter_printAsciiArt(String romanNumber) {
-        if(printAsciiArt != null){
+        if (printAsciiArt != null) {
             try {
                 return (String) printAsciiArt.invoke(romanPrinter, romanNumber);
             } catch (Exception e) {
@@ -79,13 +79,13 @@ public class RomanPrinterTest {
     public void checkPrivateMethodOfPrint() {
         assertEquals("", RomanPrinter_printAsciiArt(""));
         assertEquals("", RomanPrinter_printAsciiArt(null));
-        assertEquals("",RomanPrinter_printAsciiArt("A"));
+        assertEquals("", RomanPrinter_printAsciiArt("A"));
     }
 
-    // 
-    @Test(timeout=1000)
+    //
+    @Test(timeout = 1000)
     public void test() {
-        for(int i = 1; i<=1000; i++){
+        for (int i = 1; i <= 1000; i++) {
             System.out.println(RomanPrinter.print(i) + "- " + i);
         }
     }
