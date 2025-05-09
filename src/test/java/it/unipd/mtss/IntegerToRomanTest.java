@@ -23,19 +23,19 @@ import org.junit.Before;
 
 /**
  * Right - BICEP Test
- * (Right): intergerToRomanTest_IVXL()
+ * (Right): intergerToRomanTest()
  * (Boundary): 
  *   (Conformance): absent
  *   (Order): absent
- *   (Range): intergerToRomanNegativeTest_IVXL()
+ *   (Range): intergerToRomanNegativeTest()
  *   (Reference): absent
  *   (Existence): absent
  *   (Cardinality): absent
  *   (Time): absent
- * (Inverse): romanToIntegerTest_IVXL()
+ * (Inverse): romanToIntegerTest()
  * (Cross-check): absent
  * (Error): absent
- * (Performance): romanToIntegerTest_IVXL()
+ * (Performance): romanToIntegerTest()
  */
 
 /**
@@ -106,6 +106,49 @@ public class IntegerToRomanTest {
         for (int i = 1; i <= 50; i++) {
             assertEquals(i, romanToInteger_IVXL(IntegerToRoman.convert(i)));
         }
-    };
+    }
 
+    @Test
+    public void IntergerToRomanTest_CDM() {
+        assertEquals("C", IntegerToRoman.convert(100));
+        assertEquals("CC", IntegerToRoman.convert(200));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("D", IntegerToRoman.convert(500));
+        assertEquals("DCC", IntegerToRoman.convert(700));
+        assertEquals("CM", IntegerToRoman.convert(900));
+        assertEquals("M", IntegerToRoman.convert(1000));
+    }
+
+    public int romanToInteger_CDM(String romanNumeral) {
+
+        Map<Character, Integer> romanValues = new HashMap<>();
+        romanValues.put('C', 100);
+        romanValues.put('D', 500);
+        romanValues.put('M', 1000);
+
+        int result = 0;
+        int prevValue = 0;
+
+        for (int i = romanNumeral.length() - 1; i >= 0; i--) {
+            char currentChar = romanNumeral.charAt(i);
+            int currentValue = romanValues.get(currentChar);
+
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+
+            prevValue = currentValue;
+        }
+
+        return result;
+    }
+
+    @Test(timeout = 1000)
+    public void romanToIntegerTest_CDM() {
+        for (int i = 100; i <= 1000; i = i + 100) {
+            assertEquals(i, romanToInteger_CDM(IntegerToRoman.convert(i)));
+        }
+    }
 }
